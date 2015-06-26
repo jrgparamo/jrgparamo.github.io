@@ -17,7 +17,9 @@ $(window).ready(function() {
 	  backgrounds:[
 		{ src:'images/bg-slider/bg-1.jpg', fade:1000 },
 		{ src:'images/bg-slider/bg-2.jpg', fade:1000 },
-		{ src:'images/bg-slider/bg-3.jpg', fade:1000 }
+		{ src:'images/bg-slider/bg-3.jpg', fade:1000 },
+		{ src:'images/bg-slider/bg-4.jpg', fade:1000 },
+		{ src:'images/bg-slider/bg-5.jpg', fade:1000 }
 	  ]
 	})();
 });
@@ -71,70 +73,70 @@ $(document).ready(function() {
 /* ----------------------------- 
 Card Style Script
 ----------------------------- */					
-$(document).ready(function() {
-	'use strict';
-	var $el 			= $( '#card-ul' ),
-		sectionFeature  = $('#section-feature'),
-		baraja 			= $el.baraja();
-	
-		if ( $(window).width() > 480) {
-			sectionFeature.appear(function(){
-				baraja.fan({
-					speed : 1500,
-					easing : 'ease-out',
-					range : 100,
-					direction : 'right',
-					origin : { x : 50, y : 200 },
-					center : true
-				});
-			});
-			$('#feature-expand').click(function() {
-				baraja.fan({
-					speed : 500,
-					easing : 'ease-out',
-					range : 100,
-					direction : 'right',
-					origin : { x : 50, y : 200 },
-					center : true
-				});
-			}); 
-		} else {
-			sectionFeature.appear(function(){
-				baraja.fan({
-					speed : 1500,
-					easing : 'ease-out',
-					range : 80,
-					direction : 'left',
-					origin : { x : 200, y : 50 },
-					center : true
-				});
-			});
-			$('#feature-expand').click(function() {
-				baraja.fan({
-					speed : 500,
-					easing : 'ease-out',
-					range : 80,
-					direction : 'left',
-					origin : { x : 200, y : 50 },
-					center : true
-				});
-			});
-		}
-		
-	// Feature navigation
-	$('#feature-prev').on( 'click', function( event ) {
-		baraja.previous();
-	});
-
-	$('#feature-next').on( 'click', function( event ) {
-		baraja.next();
-	});
-	
-	// close Features
-	$('#feature-close').on( 'click', function( event ) {
-		baraja.close();
-	});	
-});
+//$(document).ready(function() {
+//	'use strict';
+//	var $el 			= $( '#card-ul' ),
+//		sectionFeature  = $('#section-feature'),
+//		baraja 			= $el.baraja();
+//	
+//		if ( $(window).width() > 480) {
+//			sectionFeature.appear(function(){
+//				baraja.fan({
+//					speed : 1500,
+//					easing : 'ease-out',
+//					range : 100,
+//					direction : 'right',
+//					origin : { x : 50, y : 200 },
+//					center : true
+//				});
+//			});
+//			$('#feature-expand').click(function() {
+//				baraja.fan({
+//					speed : 500,
+//					easing : 'ease-out',
+//					range : 100,
+//					direction : 'right',
+//					origin : { x : 50, y : 200 },
+//					center : true
+//				});
+//			}); 
+//		} else {
+//			sectionFeature.appear(function(){
+//				baraja.fan({
+//					speed : 1500,
+//					easing : 'ease-out',
+//					range : 80,
+//					direction : 'left',
+//					origin : { x : 200, y : 50 },
+//					center : true
+//				});
+//			});
+//			$('#feature-expand').click(function() {
+//				baraja.fan({
+//					speed : 500,
+//					easing : 'ease-out',
+//					range : 80,
+//					direction : 'left',
+//					origin : { x : 200, y : 50 },
+//					center : true
+//				});
+//			});
+//		}
+//		
+//	// Feature navigation
+//	$('#feature-prev').on( 'click', function( event ) {
+//		baraja.previous();
+//	});
+//
+//	$('#feature-next').on( 'click', function( event ) {
+//		baraja.next();
+//	});
+//	
+//	// close Features
+//	$('#feature-close').on( 'click', function( event ) {
+//		baraja.close();
+//	});	
+//});
 
 /* ----------------------------- 
 Fitvids init
@@ -216,15 +218,15 @@ $(document).ready(function() {
 /* ----------------------------- 
 BxSlider
 ----------------------------- */		
-$(document).ready(function() {
-	'use strict';
-	$('.testimonial-slider').bxSlider({
-		pagerCustom: '#bx-pager',
-		pager: true,
-		touchEnabled: true,
-		controls: false
-	});	
-});
+//$(document).ready(function() {
+//	'use strict';
+//	$('.testimonial-slider').bxSlider({
+//		pagerCustom: '#bx-pager',
+//		pager: true,
+//		touchEnabled: true,
+//		controls: false
+//	});	
+//});
 
 				
 /* ----------------------------- 
@@ -247,33 +249,33 @@ $(document).ready(function() {
 /* ----------------------------- 
 MailCimp Plugin Script 
 ----------------------------- */
-$(document).ready(function() {
-	'use strict';
-	$('#subscription-form').ajaxChimp({
-		callback: mailchimpCallback,
-		url: 'YOUR_URL' /* Replace it with your custom URL inside '' */
-	});
-	
-	function mailchimpCallback(resp) {
-		 if(resp.result === 'success') {
-			$('.subscription-success')
-				.html(resp.msg)
-				.delay(500)
-				.fadeIn(1000);
-
-			$('.subscription-success').fadeOut(8000);
-			
-		} else if(resp.result === 'error') {
-			$('.subscription-failed')
-				.html(resp.msg)
-				.delay(500)
-				.fadeIn(1000);
-				
-			$('.subscription-failed').fadeOut(5000);
-		}
-		$('#subscription-form .input-email').val('');
-	};
-});
+//$(document).ready(function() {
+//	'use strict';
+//	$('#subscription-form').ajaxChimp({
+//		callback: mailchimpCallback,
+//		url: 'YOUR_URL' /* Replace it with your custom URL inside '' */
+//	});
+//	
+//	function mailchimpCallback(resp) {
+//		 if(resp.result === 'success') {
+//			$('.subscription-success')
+//				.html(resp.msg)
+//				.delay(500)
+//				.fadeIn(1000);
+//
+//			$('.subscription-success').fadeOut(8000);
+//			
+//		} else if(resp.result === 'error') {
+//			$('.subscription-failed')
+//				.html(resp.msg)
+//				.delay(500)
+//				.fadeIn(1000);
+//				
+//			$('.subscription-failed').fadeOut(5000);
+//		}
+//		$('#subscription-form .input-email').val('');
+//	};
+//});
 
 			
 

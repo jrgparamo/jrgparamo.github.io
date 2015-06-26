@@ -1,9 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<title>Jorge Paramo's Portfolio</title>
 	
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -16,7 +16,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 	<!--=== Other CSS files ===-->
-	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/animate.min.css" />
 	<link rel="stylesheet" href="css/jquery.vegas.css" />
 	<link rel="stylesheet" href="css/baraja.css" />
 	<link rel="stylesheet" href="css/jquery.bxslider.css" />
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="css/responsive.css" />
 	
 	<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
-	<link rel="stylesheet" id="scheme-source" href="css/schemes/gray.css" />
+	<link rel="stylesheet" id="scheme-source" href="css/schemes/orange.css" />
 	
 	<!--=== Internet explorer fix ===-->
 	<!-- [if lt IE 9]>
@@ -65,7 +65,7 @@
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="current"><a href="#header">Home</a></li>
-								<li><a href="#section-feature">Skills</a></li>
+								<li><a href="#section-skills">Skills</a></li>
 								<li><a href="#section-services">About Me</a></li>
 								<li><a href="#section-contact">Contact</a></li>
 							</ul>
@@ -83,13 +83,13 @@
 			<div class="section-overlay"></div>
 			<div class="container home">
 				<div class="row">
-					<h1 class="well-come">Jorge Paramo</h1>
+					<h1 class="well-come">Jorge Paramo Jr.</h1>
 					
 					<div class="col-md-8 col-md-offset-2">
 						<p class="intro-message">Passionate developer, retro gamer, & nerd :D</p>
 						
 						<div class="home-buttons">
-							<a href="#" class="fancy-button button-line button-white vertical">Contact
+							<a href="#section-contact" class="fancy-button button-line button-white vertical">Contact
 								<span class="icon">
 									<i class="fa fa-gear"></i>
 								</span>
@@ -108,26 +108,38 @@
 		<!--=== Home Section Ends ===-->
 	</div>
 	
-	
 	<!--=== Skills section Starts ===-->
 	<section id="section-skills" class="feature-wrap">
 		<div class="container skills center">
 			<div class="row">
 				<div class="col-lg-12">
-                    <div class="col-md-10 col-md-offset-1 center section-title">
-                        <h3 id="skills">Skills</h3>
-                            
-                                
-                                    
-
-                                        <p>Java</p>
-                                            <div class="progress slideInUp">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                    89%</div>
-                                            </div>
-                                    
-                                
-        
+                    <div id="skills" class="col-md-10 col-md-offset-1 center section-title">
+                        <h3>Skills</h3>
+                            <p>Java</p>
+                            <div class="progress wow slideInUp">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                            90%</div>
+                            </div>
+                            <p>Python</p>
+                            <div class="progress wow slideInUp">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                            90%</div>
+                            </div>
+                            <p>Javascript</p>
+                            <div class="progress wow slideInUp">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                            85%</div>
+                            </div>
+                            <p>HTML5</p>
+                            <div class="progress wow slideInUp">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                            95%</div>
+                            </div>
+                            <p>AngularJS</p>
+                            <div class="progress wow slideInUp">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+                            55%</div>
+                            </div>
                     </div>
 				</div>
 			</div>
@@ -148,24 +160,18 @@
 				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInLeft" data-animation-delay="700">
 					<span class="service-icon center"><i class="icon icon-basic-book-pencil fa-3x"></i></span>
 					<div class="service-desc">
-						<h4 class="service-title color-scheme">Clean Design</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
+						<h4 class="service-title color-scheme">Education</h4>
+						<p class="service-description justify">I received my degree from the University of Texas at Austin in May 2015. I studied Economics and Computer Science, and I also received a certificate for completing the Elements of Computing program.</p>
 					</div>
 				</div>
 				<!-- Single Service Ends -->
-				
+				 
 				<!-- Single Service Starts -->
 				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
 					<span class="service-icon center"><i class="icon icon-basic-paperplane fa-3x"></i></span>
 					<div class="service-desc">
-						<h4 class="service-title color-scheme">Full responsive</h4>
-						<p class="service-description justify">
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
-						</p>
+						<h4 class="service-title color-scheme">About</h4>
+						<p class="service-description justify">I was born in Dallas, Texas, and I live in Mesquite, Texas. I am 24 years old, I like to program, and I love to build things. I am also a retro video gamer, but I also enjoy the outdoors.</p>
 					</div>
 				</div>
 				<!-- Single Service ends -->
@@ -174,7 +180,7 @@
 				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInRight" data-animation-delay="700">
 					<span class="service-icon center"><i class="icon icon-basic-accelerator fa-3x"></i></span>
 					<div class="service-desc">
-						<h4 class="service-title color-scheme">Ajax contact form</h4>
+						<h4 class="service-title color-scheme">Passions</h4>
 						<p class="service-description justify">
 							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
 							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
@@ -187,7 +193,7 @@
 				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
 					<span class="service-icon center"><i class="icon icon-basic-lightbulb fa-3x"></i></span>
 					<div class="service-desc">
-						<h4 class="service-title color-scheme">Mailchimp ready</h4>
+						<h4 class="service-title color-scheme">Hire Me</h4>
 						<p class="service-description justify">
 							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
 							Cillum laboris consequat, qui elit retro next level skateboard freegan hella.
@@ -257,6 +263,8 @@
 
 							<input id="subject" class="input-field form-item field-subject" type="text" required="required" name="contact-subject" placeholder="Subject" />
 							<textarea id="message" class="textarea-field form-item field-message" rows="10" name="contact-message" placeholder="Message"></textarea>
+                            <input class="input-field form-item field-name" type="text" name="answer" required="required" placeholder="Name the small house pet that says meow">
+
 						</div>
 						<button type="submit" class="fancy-button button-line button-white large zoom subform">
 							Send message
@@ -283,14 +291,16 @@
 					<!-- Social Links -->
 					<div class="social-icons">
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+							<li><a href="https://www.facebook.com/jparamo/"><i class="fa fa-facebook-square"></i></a></li>
 
-							<li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+							<li><a href="https://plus.google.com/111704410825491522121"><i class="fa fa-google-plus-square"></i></a></li>
 			
-							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+							<li><a href="https://www.linkedin.com/pub/jorge-paramo/58/3a1/124"><i class="fa fa-linkedin-square"></i></a></li>
+                            
+							<li><a href="https://github.com/jrgparamo"><i class="fa fa-github"></i></a></li>
 						</ul>
 					</div>
-					
+					<p>email: jrgparamo at utexas dot edu</p>
 					<p class="copyright">All rights reserved &copy; 2015</p>
 				</div>
 			</div>
@@ -307,12 +317,17 @@
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
 <!--==== Slider and Card style plugin ====-->
-<script type="text/javascript" src="js/jquery.baraja.js"></script>
-<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
 
+<!--<script type="text/javascript" src="js/jquery.baraja.js"></script>-->
+<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>-->
+
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 <!--==== MailChimp Widget plugin ====-->
-<script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>-->
 
 <!--==== Scroll and navigation plugins ====-->
 <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
