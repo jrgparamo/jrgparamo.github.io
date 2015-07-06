@@ -1,4 +1,4 @@
-/* ----------------------------- 
+/* -----------------------------
 Pre Loader
 ----------------------------- */
 $(window).load(function() {
@@ -8,7 +8,7 @@ $(window).load(function() {
 });
 
 
-/* ----------------------------- 
+/* -----------------------------
 Backgroung slider
 ----------------------------- */
 $(window).ready(function() {
@@ -25,12 +25,12 @@ $(window).ready(function() {
 });
 
 
-				
 
-/* ----------------------------- 
+
+/* -----------------------------
 Scroll into viewPort Animation
 ----------------------------- */
-$(document).ready(function() {	
+$(document).ready(function() {
 	'use strict';
 	$('.animated').appear(function() {
 		var element = $(this),
@@ -47,12 +47,12 @@ $(document).ready(function() {
 			}
 	});
 });
-	
 
-/* ----------------------------- 
+
+/* -----------------------------
 NiceScroll
------------------------------ */	
-$(document).ready(function() { 
+----------------------------- */
+$(document).ready(function() {
 	'use strict';
     $("html").niceScroll({
 		cursorcolor: '#E74C3C',
@@ -69,16 +69,16 @@ $(document).ready(function() {
 
 
 
-				
-/* ----------------------------- 
+
+/* -----------------------------
 Card Style Script
------------------------------ */					
+----------------------------- */
 //$(document).ready(function() {
 //	'use strict';
 //	var $el 			= $( '#card-ul' ),
 //		sectionFeature  = $('#section-feature'),
 //		baraja 			= $el.baraja();
-//	
+//
 //		if ( $(window).width() > 480) {
 //			sectionFeature.appear(function(){
 //				baraja.fan({
@@ -99,7 +99,7 @@ Card Style Script
 //					origin : { x : 50, y : 200 },
 //					center : true
 //				});
-//			}); 
+//			});
 //		} else {
 //			sectionFeature.appear(function(){
 //				baraja.fan({
@@ -122,7 +122,7 @@ Card Style Script
 //				});
 //			});
 //		}
-//		
+//
 //	// Feature navigation
 //	$('#feature-prev').on( 'click', function( event ) {
 //		baraja.previous();
@@ -131,14 +131,14 @@ Card Style Script
 //	$('#feature-next').on( 'click', function( event ) {
 //		baraja.next();
 //	});
-//	
+//
 //	// close Features
 //	$('#feature-close').on( 'click', function( event ) {
 //		baraja.close();
-//	});	
+//	});
 //});
 
-/* ----------------------------- 
+/* -----------------------------
 Fitvids init
 ----------------------------- */
  $(document).ready(function(){
@@ -147,7 +147,7 @@ Fitvids init
  });
 
 
-/* ----------------------------- 
+/* -----------------------------
 IE 9 Placeholder fix
 ----------------------------- */
 $('[placeholder]').focus(function() {
@@ -166,24 +166,24 @@ $('[placeholder]').focus(function() {
 
 
 
-/* ----------------------------- 
+/* -----------------------------
 Screenshot Load
------------------------------ */	
+----------------------------- */
 $(document).ready(function() {
 	'use strict';
 	$('.view-project').on('click', function(e) {
 		e.preventDefault();
-		
+
 		var href 			= $(this).attr('href') + ' .portfolio-project',
 			portfolioWrap	= $('.porfolio-container'),
 			contentLoaded 	= $('#portfolio-load'),
 			offset			= $('#section-screenshots').offset().top;
-		
+
 		portfolioWrap.animate({'left':'-120%'},{duration:400,queue:false});
 		portfolioWrap.fadeOut(400);
 		$('html, body').animate({scrollTop: offset},{duration:800,queue:true});
 		setTimeout(function(){ $('#portfolio-loader').fadeIn('fast'); },300);
-		
+
 		setTimeout(function(){
             contentLoaded.load(href, function(){
                 $('#portfolio-loader').fadeOut('fast');
@@ -191,33 +191,33 @@ $(document).ready(function() {
                 $('.back-button').fadeIn(600);
             });
         },400);
-		
-		
-		
+
+
+
 	});
-	
+
 	$('.backToProject').on('click', function(e){
 		e.preventDefault();
-		
+
 		var portfolioWrap	= $('.porfolio-container'),
 			contentLoaded 	= $('#portfolio-load');
-			
+
 		contentLoaded.animate({'left':'105%'},{duration:400,queue:false}).delay(300).fadeOut(400);
         $(this).parent().fadeOut(400);
 		setTimeout(function(){
             portfolioWrap.animate({'left':'0'},{duration:400,queue:false});
             portfolioWrap.fadeIn(600);
         },500);
-		
+
 	});
 
 });
 
 
-							
-/* ----------------------------- 
+
+/* -----------------------------
 BxSlider
------------------------------ */		
+----------------------------- */
 //$(document).ready(function() {
 //	'use strict';
 //	$('.testimonial-slider').bxSlider({
@@ -225,11 +225,11 @@ BxSlider
 //		pager: true,
 //		touchEnabled: true,
 //		controls: false
-//	});	
+//	});
 //});
 
-				
-/* ----------------------------- 
+
+/* -----------------------------
 Main navigation
 ----------------------------- */
 $(document).ready(function() {
@@ -243,45 +243,45 @@ $(document).ready(function() {
 		var scrollPos = $(window).scrollTop();
 		scrollPos > 220 ? $('.sticky-section').addClass('nav-bg') : $('.sticky-section').removeClass('nav-bg');
 	});
-});				
-				
-				
-/* ----------------------------- 
-MailCimp Plugin Script 
+});
+
+
+/* -----------------------------
+MailCimp Plugin Script
 ----------------------------- */
-//$(document).ready(function() {
-//	'use strict';
-//	$('#subscription-form').ajaxChimp({
-//		callback: mailchimpCallback,
-//		url: 'YOUR_URL' /* Replace it with your custom URL inside '' */
-//	});
-//	
-//	function mailchimpCallback(resp) {
-//		 if(resp.result === 'success') {
-//			$('.subscription-success')
-//				.html(resp.msg)
-//				.delay(500)
-//				.fadeIn(1000);
-//
-//			$('.subscription-success').fadeOut(8000);
-//			
-//		} else if(resp.result === 'error') {
-//			$('.subscription-failed')
-//				.html(resp.msg)
-//				.delay(500)
-//				.fadeIn(1000);
-//				
-//			$('.subscription-failed').fadeOut(5000);
-//		}
-//		$('#subscription-form .input-email').val('');
-//	};
-//});
+// $(document).ready(function() {
+// 	'use strict';
+// 	$('#subscription-form').ajaxChimp({
+// 		callback: mailchimpCallback,
+// 		url: 'YOUR_URL' /* Replace it with your custom URL inside '' */
+// 	});
 
-			
+// 	function mailchimpCallback(resp) {
+// 		 if(resp.result === 'success') {
+// 			$('.subscription-success')
+// 				.html(resp.msg)
+// 				.delay(500)
+// 				.fadeIn(1000);
 
-/* ----------------------------- 
+// 			$('.subscription-success').fadeOut(8000);
+
+// 		} else if(resp.result === 'error') {
+// 			$('.subscription-failed')
+// 				.html(resp.msg)
+// 				.delay(500)
+// 				.fadeIn(1000);
+
+// 			$('.subscription-failed').fadeOut(5000);
+// 		}
+// 		$('#subscription-form .input-email').val('');
+// 	};
+// });
+
+
+
+/* -----------------------------
 Contact form
------------------------------ */			
+----------------------------- */
 $(document).ready(function() {
 	'use strict';
 	$('form.contact-form').on('submit', function(e) {
@@ -303,4 +303,4 @@ $(document).ready(function() {
 	});
 
 });
-			
+
