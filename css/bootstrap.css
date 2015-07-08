@@ -1375,7 +1375,8 @@ pre {
   color: #c7254e;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: rgba(23, 22, 22, .94);
+  background-color: rgba(51, 51, 51, .94);
+/*  old background-color: rgba(23, 22, 22, .94);*/
 /*  border: 1px solid rgba(23, 22, 22, .94);*/
   border-radius: 4px;
   text-align:justify;
@@ -3607,7 +3608,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
- 
+
   border-color: #428bca;
 }
 .nav .nav-divider {
