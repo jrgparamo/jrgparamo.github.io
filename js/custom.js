@@ -18,8 +18,7 @@ $(window).ready(function() {
 		{ src:'images/bg-slider/bg-1.jpg', fade:1000 },
 		{ src:'images/bg-slider/bg-2.jpg', fade:1000 },
 		{ src:'images/bg-slider/bg-3.jpg', fade:1000 },
-		{ src:'images/bg-slider/bg-4.jpg', fade:1000 },
-		{ src:'images/bg-slider/bg-5.jpg', fade:1000 }
+		{ src:'images/bg-slider/bg-4.jpg', fade:1000 }
 	  ]
 	})();
 });
