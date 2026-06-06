@@ -1,461 +1,241 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-	<title>Jorge Paramo's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Paramo — Coming Soon</title>
+  <meta name="description" content="Jorge Paramo's portfolio is being rebuilt. Back soon.">
+  <meta name="robots" content="noindex">
 
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/linea-icon.css" />
-	<link rel="stylesheet" href="css/fancy-buttons.css" />
+  <!-- Non-blocking font load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"></noscript>
 
-	<!--=== Google Fonts ===-->
-	<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<!--=== Other CSS files ===-->
-	<link rel="stylesheet" href="css/animate.min.css" />
-	<link rel="stylesheet" href="css/jquery.vegas.css" />
-	<link rel="stylesheet" href="css/baraja.css" />
-	<link rel="stylesheet" href="css/jquery.bxslider.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<!--=== Main Stylesheets ===-->
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/responsive.css" />
+    :root {
+      --bg:       #080c10;
+      --surface:  #0f1520;
+      --border:   #1e2a3a;
+      --accent:   #4f9cf9;
+      --accent2:  #a78bfa;
+      --text:     #e2e8f0;
+      --muted:    #64748b;
+      --tag-bg:   rgba(79,156,249,.1);
+    }
 
-	<!--=== Color Scheme, three colors are available red.css, orange.css and gray.css ===-->
-	<link rel="stylesheet" id="scheme-source" href="css/schemes/orange.css" />
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-	<!--=== Internet explorer fix ===-->
-	<!-- [if lt IE 9]>
-		<script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif] -->
+    /* ── Grid noise background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+    }
 
+    /* ── Glow orbs ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(79,156,249,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 70%, rgba(167,139,250,.10) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
+    /* ── Layout ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      gap: 2.5rem;
+    }
+
+    /* ── Status badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(79,156,249,.6);
+      animation: ping 1.8s ease-in-out infinite;
+    }
+
+    @keyframes ping {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(79,156,249,.6); }
+      50%       { box-shadow: 0 0 0 6px rgba(79,156,249,0); }
+    }
+
+    /* ── Main card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem 3.5rem;
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    }
+
+    .name {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      background: linear-gradient(135deg, var(--text) 40%, var(--muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: .4rem;
+    }
+
+    .role {
+      font-size: .95rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0 0 2rem;
+    }
+
+    .headline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .75rem;
+    }
+
+    .body-text {
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Tech tags ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.75rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid rgba(79,156,249,.2);
+      color: var(--accent);
+      border-radius: 6px;
+      padding: .25rem .7rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .tag.purple {
+      background: rgba(167,139,250,.08);
+      border-color: rgba(167,139,250,.2);
+      color: var(--accent2);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      font-size: .78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+
+    .footer a:hover { opacity: .75; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-	<!--=== Preloader section starts ===-->
-	<section id="preloader">
-		<div class="loading-circle fa-spin"></div>
-	</section>
-	<!--=== Preloader section Ends ===-->
+  <div class="page">
 
-	<!--=== Header section Starts ===-->
-	<div id="header" class="header-section">
-		<!-- sticky-bar Starts-->
-		<div class="sticky-bar-wrap">
-			<div class="sticky-section">
-				<div id="topbar-hold" class="nav-hold container">
-					<nav class="navbar" role="navigation">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-							</button>
-							<!--=== Site Name ===-->
-							<a class="site-name navbar-brand" href="#"><img src="images/logo.png"></a>
-						</div>
+    <span class="badge">
+      <span class="badge-dot"></span>
+      Under maintenance
+    </span>
 
-						<!-- Main Navigation menu Starts -->
-						<div class="collapse navbar-collapse navbar-responsive-collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="current"><a href="#header">Home</a></li>
-								<li><a href="#section-skills">Skills</a></li>
-								<li><a href="#section-services">About Me</a></li>
-								<li><a href="#section-contact">Contact</a></li>
-							</ul>
-						</div>
-						<!-- Main Navigation menu ends-->
-					</nav>
-				</div>
-			</div>
-		</div>
-		<!-- sticky-bar Ends-->
-		<!--=== Header section Ends ===-->
+    <div class="card">
+      <p class="name">Jorge Paramo</p>
+      <p class="role">Software Engineer &amp; Developer</p>
 
-		<!--=== Home Section Starts ===-->
-		<div id="section-home" class="home-section-wrap center">
-			<div class="section-overlay"></div>
-			<div class="container home">
-				<div class="row">
-					<h1 class="well-come">Jorge Paramo Jr.</h1>
+      <div class="divider"></div>
 
-					<div class="col-md-8 col-md-offset-2">
-						<p class="intro-message">Passionate developer, retro gamer, & nerd :D</p>
+      <p class="headline">Portfolio is being rebuilt</p>
+      <p class="body-text">
+        This site is currently under construction. I'm rebuilding it
+        from scratch with a modern stack and it will be back up shortly.
+        Thanks for your patience.
+      </p>
 
-						<div class="home-buttons">
-							<a href="#section-contact" class="fancy-button button-line button-white vertical">Contact
-								<span class="icon">
-									<i class="fa fa-gear"></i>
-								</span>
-							</a>
-							<a href="rs/Resume_2015.pdf" class="fancy-button button-line button-white zoom">
-								Download Resume
-								<span class="icon">
-									<i class="fa fa-leaf"></i>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--=== Home Section Ends ===-->
-	</div>
+      <div class="tags">
+        <span class="tag">Vite</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag purple">React</span>
+        <span class="tag purple">Coming soon</span>
+      </div>
+    </div>
 
-	<!--=== Skills section Starts ===-->
-	<section id="section-skills" class="feature-wrap">
-		<div class="container skills center">
-			<div class="row">
-				<div class="col-lg-12">
-                    <div id="skills" class="col-md-10 col-md-offset-1 center section-title">
-                        <h3>Skills</h3>
-                            <p>Java</p>
-                            <div class="progress wow slideInLeft">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                            90%</div>
-                            </div>
-                            <p>Python</p>
-                            <div class="progress wow slideInRight">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                            90%</div>
-                            </div>
-                            <p>Javascript</p>
-                            <div class="progress wow slideInLeft">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                            85%</div>
-                            </div>
-                            <p>HTML5</p>
-                            <div class="progress wow slideInRight">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                            95%</div>
-                            </div>
-                            <p>AngularJS</p>
-                            <div class="progress wow slideInLeft">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                            75%</div>
-                            </div>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Skills section Ends ===-->
+    <p class="footer">
+      In the meantime, reach me at
+      <a href="mailto:jrgparamo@gmail.com">jrgparamo@gmail.com</a>
+    </p>
 
-	<!--=== About section Starts ===-->
-	<section id="section-services" class="services-wrap">
-		<div class="container services">
-			<div class="row">
-
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>About Me</h3>
-				</div>
-
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInLeft" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-book-pencil fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Education</h4>
-						<p class="service-description justify">
-							I received my degree from the University of Texas at Austin in May 2015.
-							I studied Economics and Computer Science, and I also received a certificate for completing the Elements of Computing program.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-paperplane fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">About</h4>
-						<p class="service-description justify">
-							I am 24 year old bilingual who likes to program, and I love to build cool things.
-							I am also a retro video gamer, but when I am not playing games or programming, I am enjoying the outdoors.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service ends -->
-
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInRight" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-accelerator fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Passions</h4>
-						<p class="service-description justify">
-							I enjoy all kinds of application development. I have front end experience; one of my newest passions includes working with the AngularJS framework.
-							Nonetheless, I would like to develop backend services and applications as well.
-							I also have a passion for data analytics, big data, and programming with single-board computers.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-
-				<!-- Single Service Starts -->
-				<div class="col-md-6 col-sm-6 service animated" data-animation="fadeInUp" data-animation-delay="700">
-					<span class="service-icon center"><i class="icon icon-basic-lightbulb fa-3x"></i></span>
-					<div class="service-desc">
-						<h4 class="service-title color-scheme">Hire Me</h4>
-						<p class="service-description justify">
-							I am a driven and motivated developer ready to work and continue learning.
-							I enjoy working with diverse teams because it fosters a learning enviroment,
-							and learning from others helps develop awesome ideas.
-						</p>
-					</div>
-				</div>
-				<!-- Single Service Ends -->
-			</div>
-		</div>
-	</section>
-	<!--=== About section Ends ===-->
-
-	<!--=== Workplaces section Starts ===-->
-	<section id="section-video" class="section-video-wrap">
-		<div class="section-overlay"></div>
-		<div class="container big-video center animated" data-animation="fadeInLeft" data-animation-delay="700">
-			<div class="row">
-				<div class="col-md-12 section-title">
-					<h3>Workplaces</h3>
-				</div>
-				<div class="col-md-10 col-md-offset-1 video-content">
-                    <ul>
-                        <li>
-                            <img src="images/walmart_logo.png">
-                        </li>
-                        <li>
-                            <img src="images/UTAustin-Final.png">
-                        </li>
-                        <li>
-                            <img src="images/usaa-logo.png">
-                        </li>
-                    </ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Workplaces section Ends ===-->
-
-	<!--=== Projects section Starts ===-->
-	<section id="section-screenshots" class="screenshots-wrap">
-		<div class="container screenshots animated" data-animation="fadeInUp" data-animation-delay="1000">
-			<div class="row porfolio-container">
-
-				<div class="col-md-10 col-md-offset-1 center section-title">
-					<h3>My Latest Projects</h3>
-
-                </div>
-  				<div class="col-md-10 col-md-offset-1 section-title">
-                    <dl>
-                        <dt>Front End: Developed hybrid cross-platform mobile application</dt>
-                        <dd>
-                        	Developed a proof of concept task manager application intended for Walmart store managers.
-                        	AngularJS was used to create a maintainable application, and Cue-Me, a container for the html/css/javascript code, was used
-                        	to develop the application for mobile use. The application was used in conjuction with a IBM software product, Business Process Manager (BPM), as example/template
-                        	for future use.
-                        </dd>
-                        <br>
-                        <dt>Back End: Music Streaming Sim</dt>
-                        <dd>
-                        	For my database class, I worked with a relational database (Oracle server) to create a simulation of a
-                        	music streaming service. My python application used the cx_Oracle driver to communicate with the database.
-                        	The database maintained user records, songs played, current song playing, and transactions relating to music plan changes.
-                        </dd>
-                        <br>
-                        <dt>Team Project: Project Smart Cart</dt>
-                        <dd>This team intern project consisted of developing a system to alleviate the wobbly wheel shopping cart problem.
-                        	We designed a system to ensure the customer never has to deal with broken shopping carts. Our product was a hybrid cross-platform mobile
-                        	web application that associates would use to track carts and tag for repair. AngularJS along with Ionic was used for the development.</dd>
-                        <br>
-                        <dt>Data Science: Data Wrangling Project</dt>
-                        <dd>
-                        	This was a pair programming project where my partner and I used two very large public data sets to create useful
-                        	vizualizations using the R language with RStudio and Tableau. The large data sets were imported into an
-                        	Oracle server using SQL Developer, and restful api calls were used to retrive the data for statistical analysis.
-                        </dd>
-                    </dl>
-                </div>
-			</div>
-		</div>
-	</section>
-	<!--=== Projects section Ends ===-->
-
-	<!--=== Contact section Starts ===-->
-<!-- OLD FORM
-<form id="contact" class="contact-form support-form">
-<div class="col-lg-12">
-<input id="name" class="input-field form-item field-name" type="text" required="required" name="contact-name" placeholder="Name" />
-
-<input id="email" class="input-field form-item field-email" type="email" required="required" name="contact-email" placeholder="Email" />
-
-<input id="subject" class="input-field form-item field-subject" type="text" required="required" name="contact-subject" placeholder="Subject" />
-
-<textarea id="message" class="textarea-field form-item field-message" rows="10" name="contact-message" placeholder="Message"></textarea>
-
-<input id="answer" class="input-field form-item field-name" type="text" required="required" name="answer" placeholder="Small house pet that says meow?">
-
-</div>
-<button type="submit" class="fancy-button button-line button-white large zoom subform">
-Send message
-<span class="icon">
-<i class="fa fa-paper-plane-o"></i>
-</span>
-</button>
-</form> -->
-	<section id="section-contact" class="contact-wrap">
-	<div class="section-overlay"></div>
-		<div class="container contact center animated" data-animation="flipInY" data-animation-delay="1000">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-10 col-md-offset-1 center section-title">
-						<h3>Send me a message</h3>
-						<pre>contactInfo {
- name: Jorge Paramo,
- email: jrgparamo @ utexas dot edu
-}
-                        </pre>
-					</div>
-
-<!-- 					<div class="confirmation">
-						<p><span class="fa fa-check"></span></p>
-					</div> -->
-
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--=== Contact section Ends ===-->
-
-	<!--=== Footer section Starts ===-->
-	<div id="section-footer" class="footer-wrap">
-		<div class="container footer center">
-			<div class="row">
-				<div class="col-lg-12">
-					<h4 class="footer-title"><!-- Footer Title -->
-						<a class="site-name" href="#"><img src="images/logo.png"></a>
-					</h4>
-
-					<!-- Social Links -->
-					<div class="social-icons">
-						<ul>
-							<li><a href="https://www.facebook.com/jparamo/"><i class="fa fa-facebook-square"></i></a></li>
-
-							<li><a href="https://plus.google.com/111704410825491522121"><i class="fa fa-google-plus-square"></i></a></li>
-
-							<li><a href="https://www.linkedin.com/pub/jorge-paramo/58/3a1/124"><i class="fa fa-linkedin-square"></i></a></li>
-
-							<li><a href="https://github.com/jrgparamo"><i class="fa fa-github"></i></a></li>
-						</ul>
-					</div>
-
-<!--					<p>email: jrgparamo at utexas dot edu</p>-->
-					<p class="copyright">All rights reserved &copy; 2015</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--=== Footer section Ends ===-->
-
-<!--==== Js files ====-->
-<!--==== Essential files ====-->
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-
-<!--==== Slider and Card style plugin ====-->
-
-<!--<script type="text/javascript" src="js/jquery.baraja.js"></script>-->
-<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-<!--<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>-->
-
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-<script type="text/javascript">
-jQuery.validator.addMethod('answercheck', function (value, element) {
-        return this.optional(element) || /^\bcat\b$/.test(value);
-    }, "type the correct answer -_-");
-
-// validate contact form
-$(function() {
-    $('#contact').validate({
-        rules: {
-            name: {
-                required: true,
-                minlength: 2
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            message: {
-                required: true
-            },
-            answer: {
-                required: true,
-                answercheck: true
-            }
-        },
-        messages: {
-            name: {
-                required: "come on, you have a name don't you?",
-                minlength: "your name must consist of at least 2 characters"
-            },
-            email: {
-                required: "no email, no message"
-            },
-            message: {
-                required: "um...yea, you have to write something to send this form.",
-                minlength: "thats all? really?"
-            },
-            answer: {
-                required: "sorry, wrong answer!"
-            }
-        },
-        submitHandler: function(form) {
-            $(form).ajaxSubmit({
-                type:"POST",
-                data: $(form).serialize(),
-                url:"contact/contact.php",
-                success: function() {
-                    $('#contact :input').attr('disabled', 'disabled');
-                    $('#contact').fadeTo( "slow", 0.15, function() {
-                        $(this).find(':input').attr('disabled', 'disabled');
-                        $(this).find('label').css('cursor','default');
-                        $('#success').fadeIn();
-                    });
-                },
-                error: function() {
-                    $('#contact').fadeTo( "slow", 0.15, function() {
-                        $('#error').fadeIn();
-                    });
-                }
-            });
-        }
-    });
-});
-</script>
-
-<script type="text/javascript" src="js/wow.min.js"></script>
-<script>
-    new WOW().init();
-</script>
-<!--==== MailChimp Widget plugin ====-->
-<!-- <script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script> -->
-
-<!--==== Scroll and navigation plugins ====-->
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="js/jquery.nav.js"></script>
-<script type="text/javascript" src="js/jquery.appear.js"></script>
-<script type="text/javascript" src="js/jquery.fitvids.js"></script>
-
-<!--==== Custom Script files ====-->
-<script type="text/javascript" src="js/custom.js"></script>
-
+  </div>
 </body>
 </html>
