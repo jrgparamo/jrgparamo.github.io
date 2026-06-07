@@ -1,0 +1,20 @@
+.about {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 0.975rem;
+  color: var(--text);
+  line-height: 1.75;
+  max-width: 640px;
+}
