@@ -1,0 +1,32 @@
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+  padding: 1.5rem 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.resume {
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.resume:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}

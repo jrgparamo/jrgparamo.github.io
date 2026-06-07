@@ -1,0 +1,98 @@
+.education {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+}
+
+.meta {
+  padding-top: 0.1rem;
+}
+
+.dates {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.school {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.degree {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.certsBlock {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.certsHeading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.certsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.certItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.certName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.certMeta {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.certStatus {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
