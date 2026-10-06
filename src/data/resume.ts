@@ -8,7 +8,7 @@ export const personal = {
   trailblazer: 'https://salesforce.com/trailblazer/jparamo',
   bio: 'Fullstack engineer with 10+ years of experience building high-performance eCommerce storefronts and web applications. Expert in Salesforce Commerce Cloud, specializing in custom SFRA solutions, composable storefronts, and integrations for major retail brands. Passionate about clean architecture, mentoring engineers, and shipping quality code.',
   photo: '/images/profile1851.jpeg',
-  resumePdf: '/rs/JorgeParamo-2026-Resume.pdf',
+  resumePdf: '/rs/JorgeParamo-Resume.pdf',
 }
 
 export interface SkillGroup {
