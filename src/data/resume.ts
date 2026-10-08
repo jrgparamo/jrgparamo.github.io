@@ -71,6 +71,8 @@ export const experience: ExperienceItem[] = [
     end: 'Present',
     bullets: [
       'Developed and launched an in-house tool for NB store associates leveraging Salesforce\'s Composable product (PWAKit)',
+      'Implemented best practices for maintainable code without sacrificing performance',
+      'Optimized Product Grid Page performance and decreased load times by 40% on PWA kit app',
       'Member of the internal AI-Cop team — audited developer tooling and contributed AI-driven solutions to the storefront and internal systems',
     ],
   },

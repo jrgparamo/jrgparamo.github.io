@@ -30,6 +30,7 @@ jobs:
           node-version-file: ".node-version"
           cache: true
           run-install: true
+          sfw: true
 
       - name: Build
         run: vp run build
