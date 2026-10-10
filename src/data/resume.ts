@@ -6,7 +6,7 @@ export const personal = {
   github: 'https://github.com/jrgparamo',
   linkedin: 'https://www.linkedin.com/in/jrgparamo',
   trailblazer: 'https://salesforce.com/trailblazer/jparamo',
-  bio: 'Senior software engineer with 10+ years designing, building and supporting scalable, secure customer platforms for global brands across digital and retail channels. Experienced in APIs, service and data integrations, event instrumentation, performance and reliability, leading cross-team delivery, and adopting AI-assisted development tools. Passionate about clean architecture, mentoring engineers, and shipping quality code.',
+  bio: 'Senior software engineer with 10+ years designing, building and supporting scalable, secure customer platforms for global brands across digital and retail channels. Experienced in APIs, service and data integrations, event instrumentation, performance and reliability, leading cross-team delivery, and adopting AI-assisted development tools. Passionate about excellent customer experiences, clean architecture, mentoring engineers, and shipping quality code.',
   photo: '/images/profile1851.jpeg',
   resumePdf: '/rs/JorgeParamo-Current-Resume.pdf',
 }
