@@ -6,7 +6,7 @@ export const personal = {
   github: 'https://github.com/jrgparamo',
   linkedin: 'https://www.linkedin.com/in/jrgparamo',
   trailblazer: 'https://salesforce.com/trailblazer/jparamo',
-  bio: 'Fullstack engineer with 10+ years of experience building high-performance eCommerce storefronts and web applications. Expert in Salesforce Commerce Cloud, specializing in custom SFRA solutions, composable storefronts, and integrations for major retail brands. Passionate about clean architecture, mentoring engineers, and shipping quality code.',
+  bio: 'Senior software engineer with 10+ years designing, building and supporting scalable, secure customer platforms for global brands across digital and retail channels. Experienced in APIs, service and data integrations, event instrumentation, performance and reliability, leading cross-team delivery, and adopting AI-assisted development tools. Passionate about clean architecture, mentoring engineers, and shipping quality code.',
   photo: '/images/profile1851.jpeg',
   resumePdf: '/rs/JorgeParamo-Current-Resume.pdf',
 }
@@ -18,37 +18,58 @@ export interface SkillGroup {
 
 export const skills: SkillGroup[] = [
   {
-    label: 'Proficient',
+    label: 'Languages',
     items: [
-      'JavaScript',
+      'Java',
+      'JavaScript (Node.js)',
       'TypeScript',
+      'Python',
+      'SQL',
+    ],
+  },
+  {
+    label: 'APIs & integration',
+    items: [
+      'REST APIs',
+      'third-party and payment integrations',
+      'batch jobs and data pipelines',
+      'event tracking (Algolia Insights, GA4, Tealium)',
+    ],
+  },
+  {
+    label: 'Cloud & platforms',
+    items: [
+      'Salesforce Commerce Cloud',
+      'Composable Storefront (PWA Kit)',
+      'Managed Runtime',
+      'Cloudflare edge workers',
+      'Vercel',
+      'MongoDB',
+      'Algolia',
+    ],
+  },
+  {
+    label: 'Reliability & security',
+    items: [
+      'caching',
+      'performance tuning',
+      'high-traffic launch protection',
+      'bot mitigation',
+      'PII encryption',
+      'GDPR/CCPA Practices',
+    ],
+  },
+  {
+    label: 'Tools & Frameworks',
+    items: [
+      'automated unit testing (Mocha, Chai)',
+      'code review',
+      'Git',
+      'Agile/Jira',
+      'AI-assisted development (GitHub Copilot)',
       'React',
       'Next.js',
-      'Astro',
-      'Node.js',
-      'Python',
-      'Java',
-      'HTML5',
-      'CSS',
-      'SQL',
-      'MongoDB',
-      'Git',
     ],
-  },
-  {
-    label: 'Expert',
-    items: [
-      'Salesforce Commerce Cloud (SFCC)',
-      'SFRA',
-      'PWAKit',
-      'Composable Storefront',
-      'REST APIs',
-      'Agile / Scrum',
-    ],
-  },
-  {
-    label: 'Exploring',
-    items: ['AI Tooling / LLM Integration', 'DevOps', 'CI/CD'],
   },
 ]
 
@@ -64,16 +85,21 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    company: 'Red Van – New Balance',
+    company: 'Red Van (client: New Balance)',
     role: 'Senior Fullstack Engineer',
     location: 'Remote',
     start: 'Aug 2021',
     end: 'Present',
     bullets: [
-      'Developed and launched an in-house tool for NB store associates leveraging Salesforce\'s Composable product (PWAKit)',
-      'Implemented best practices for maintainable code without sacrificing performance',
-      'Optimized Product Grid Page performance and decreased load times by 40% on PWA kit app',
-      'Member of the internal AI-Cop team — audited developer tooling and contributed AI-driven solutions to the storefront and internal systems',
+      'Product Discovery team, global platform across NA, EMEA and APAC; lead engineer on 222 of 450+ work items.',
+      'Led the Algolia search migration across multiple international storefronts, coordinating merchandising, analytics and regional teams, with a hybrid fallback that kept non-migrated regions running.',
+      'Re-architected the product data feed and built an automated batch job replicating index settings across environments, resolving payload-limit failures and removing manual promotion steps.',
+      'Designed a conditional caching layer that preserved edge caching while serving personalized search sorting, sharply reducing server load.',
+      'Launched an in-store associate app on Composable Storefront (PWA Kit), cut its product grid load times by 40%, and optimized APIs for the associate iPad app.',
+      'Integrated customer data across services: 3D foot-scan profiles via secure tokens, order-history syndication for personalized recommendations, and PII encryption in review feeds for GDPR/CCPA.',
+      'Provided production support for tier-1 sneaker launches, keeping checkout stable under extreme traffic with Queue-it waiting rooms, session tokens and bot throttling.',
+      'Restored and expanded event telemetry (click, conversion, null-search, GA4) for accurate revenue attribution; a Japan canonical URL fix protected ~$770K in annual organic revenue.',
+      'Led headless and Managed Runtime architecture spikes to guide platform modernization; used GitHub Copilot extensively in development and, as a member of the AI Community of Practice, evaluated AI-assisted developer tools and AI-driven solutions.',
     ],
   },
   {
@@ -83,7 +109,7 @@ export const experience: ExperienceItem[] = [
     start: 'Aug 2020',
     end: 'Aug 2021',
     bullets: [
-      'Full stack engineer delivering highly custom and optimized SFCC storefronts for major retail brands',
+      'Delivered custom, performance-optimized storefronts for Claire\'s, Vermont Teddy Bear, Lush and Warrior, lifting conversion and click-through rates.',
       'Helped brands such as Claires, Vermont Teddy Bear, Lush, and Warrior increase conversion rates and click-through rates through unique page elements and modern backend optimizations',
     ],
   },
@@ -185,7 +211,7 @@ export const certifications: CertificationItem[] = [
     issued: 'Sept 2019',
   },
   {
-    name: 'Composable Storefront – B2C201',
+    name: 'Salesforce Composable Storefront (B2C201)',
     issued: 'April 2025',
   },
 ]
