@@ -199,6 +199,13 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
+    name: 'EPL Prediction App',
+    description:
+      'A modern Next.js application for predicting English Premier League match results with real-time data integration from Football Data API. Features include user authentication, responsive design, offline support, and a smart prediction scoring system with points calculation.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Auth.js v5', 'Prisma ORM', 'PostgreSQL', 'Football Data API'],
+    link: 'https://github.com/jrgparamo/epl-app-next',
+  },
+  {
     name: 'Personal Website on ARMv7',
     description:
       'Portfolio site built with Ruby on Rails, self-hosted on an ODROID-C1 running Lubuntu 14.04. Learned Linux system administration and back-end development in the process.',
