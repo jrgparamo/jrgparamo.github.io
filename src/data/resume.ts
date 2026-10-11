@@ -67,6 +67,7 @@ export const skills: SkillGroup[] = [
       'Git',
       'Agile/Jira',
       'AI-assisted development (GitHub Copilot)',
+      'Agent Orchestration (Opencode, Bionic, GitHub Copilot App)',
       'React',
       'Next.js',
     ],
