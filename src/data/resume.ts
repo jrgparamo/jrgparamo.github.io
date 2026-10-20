@@ -31,9 +31,12 @@ export const skills: SkillGroup[] = [
     label: 'APIs & integration',
     items: [
       'REST APIs',
-      'third-party and payment integrations',
-      'batch jobs and data pipelines',
-      'event tracking (Algolia Insights, GA4, Tealium)',
+      'Third-party and Payment Integrations',
+      'Batch jobs and Data Pipelines',
+      'Event Tracking (Algolia Insights, GA4, Tealium)',
+      'OCAPI',
+      'SCAPI',
+      'GraphQL',
     ],
   },
   {
@@ -51,10 +54,10 @@ export const skills: SkillGroup[] = [
   {
     label: 'Reliability & security',
     items: [
-      'caching',
-      'performance tuning',
-      'high-traffic launch protection',
-      'bot mitigation',
+      'Caching',
+      'Performance tuning',
+      'High-traffic Launch Protection',
+      'Bot Mitigation',
       'PII encryption',
       'GDPR/CCPA Practices',
     ],
@@ -62,8 +65,7 @@ export const skills: SkillGroup[] = [
   {
     label: 'Tools & Frameworks',
     items: [
-      'automated unit testing (Mocha, Chai)',
-      'code review',
+      'Automated unit testing (Mocha, Chai)',
       'Git',
       'Agile/Jira',
       'AI-assisted development (GitHub Copilot)',
